@@ -1,34 +1,42 @@
 function loadPhotos () {
     const slide = document.querySelector('.slide');
+    const numOfPics = 5;
+    let position = 1;
 
-    let photoArray = [];
-    const photo1 = new Image();
-    const photo2 = new Image();
-    const photo3 = new Image();
-    const photo4 = new Image();
-    const photo5 = new Image();
+    slide.classList.add('pic' + position);
 
-    photo1.src = 'images/pic1';
-    photo2.src = '../src/styles/images/pic2';
-    photo3.src = '../src/styles/images/pic3';
-    photo4.src = '../src/styles/images/pic4';
-    photo5.src = '../src/styles/images/pic5';
+    //window.setInterval(nextPicture, 5000);
 
-    photoArray[0] = photo1;
-    photoArray[1] = photo2;
-    photoArray[2] = photo3;
-    photoArray[3] = photo4;
-    photoArray[4] = photo5;
-
-    slide.style.backgroundImage = "url('../src/styles/images/pic1')";
-
-    //window.setTimeout(nextPicture, 5000);
+    document.querySelector('#forward').addEventListener('click', nextPicture);
+    document.querySelector('#backward').addEventListener('click', previousPicture);
 
     function nextPicture () {
-        let position = 0;
-        console.log(photoArray[position].src);
-        slide.style.backgroundImage = 'url(' + photoArray[position].src + ')';
-        position += 1;
+        if (position >= numOfPics) {
+            slide.classList.remove('pic' + numOfPics);
+            position = 0;
+        }
+        if (position !== 0){
+            position += 1;
+            slide.classList.remove('pic' + (position - 1));
+            slide.classList.add('pic' + position);    
+        }
+        else {
+            position += 1;
+            slide.classList.add('pic' + position);     
+        }
+    }
+
+    function previousPicture () {
+        if (position === 1) {
+            slide.classList.remove('pic' + position);
+            slide.classList.add('pic' + numOfPics);
+            position = numOfPics;
+        }
+        else {
+            slide.classList.remove('pic' + position);
+            slide.classList.add('pic' + (position - 1))
+            position -= 1;    
+        }
     }
 }
 
