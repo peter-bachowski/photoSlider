@@ -1,6 +1,9 @@
 import _ from 'lodash';
-//import './styles.css';
 import '../src/styles/main.scss'
-import addContainer from './addContainer';
+import addBaseElements from './modules/addBaseElements';
+import formatContentArea from './modules/formatContentArea';
+import loadPhotos from './modules/loadPhotos';
 
-addContainer();
+addBaseElements();
+formatContentArea();
+loadPhotos();
