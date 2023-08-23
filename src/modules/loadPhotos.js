@@ -2,13 +2,30 @@ function loadPhotos () {
     const slide = document.querySelector('.slide');
     const numOfPics = 5;
     let position = 1;
+    let isPaused = false;
 
     slide.classList.add('pic' + position);
 
-    //window.setInterval(nextPicture, 5000);
+    //listeners
+
+    window.setInterval(function () {
+        if (!isPaused) {
+            nextPicture();
+        }
+    }, 5000);
 
     document.querySelector('#forward').addEventListener('click', nextPicture);
     document.querySelector('#backward').addEventListener('click', previousPicture);
+    document.querySelector('.pauseStartBtn').addEventListener('click', () => {
+        if (isPaused) {
+            isPaused = false;
+        }
+        else {
+            isPaused = true;
+        }
+    });
+
+    //functions
 
     function nextPicture () {
         if (position >= numOfPics) {

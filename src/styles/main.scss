@@ -3,96 +3,111 @@ $primary-font: 'Roboto';
 $primary-color: rgb(45, 50, 104);
 $secondary-color: rgb(87, 93, 157);
 
+$pic1Src: './images/pic1.jpeg';
+$pic2Src: './images/pic2.jpeg';
+$pic3Src: './images/pic3.jpeg';
+$pic4Src: './images/pic4.jpeg';
+$pic5Src: './images/pic5.jpeg';
+
 body, html {
-    margin: 0;
-    padding: 0;
-  }
-  
-  * {
-    box-sizing: border-box;
-    font-family: $primary-font, sans-serif;
-  }
-  
-  .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  margin: 0;
+  padding: 0;
+}
 
-  body, html, .header, .mainBody, .footer {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .header {
-    height: 100px;
-    background-color: $secondary-color;
-  }
+* {
+  box-sizing: border-box;
+  font-family: $primary-font, sans-serif;
+}
 
-  .footer {
-    height: 200px;
-    background-color: $primary-color;
-  }
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .mainBody, .slideContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+body, html, .header, .mainBody, .footer {
+  width: 100%;
+  height: 100%;
+}
 
-  .slideContainer {
-    height: 80%;
-    width: 100%;
-    background-color: rgb(244, 244, 244);
-    position: relative;
-  }
+.header {
+  height: 100px;
+  background-color: $secondary-color;
+}
 
-  .arrow {
-    height: 50px;
-    width: 50px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    cursor: pointer;
-  }
+.footer {
+  height: 200px;
+  background-color: $primary-color;
+}
 
-  #forward {
-    background-image: url('./images/chevron-right.png');
-    right: 0;
-  }
+.mainBody, .slideContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  #backward {
-    background-image: url('./images/chevron-left.png');
-    left: 0;
-  }
+.slideContainer {
+  height: 80%;
+  width: 100%;
+  background-color: rgb(244, 244, 244);
+  position: relative;
+  flex-direction: column;
+}
 
-  .slide {
-    height: 80%;
-    width: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
+.arrow, .pauseStartBtn {
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
 
-  .pic1 {
-    background-image: url('./images/pic1.jpeg');
-  }
+.arrow {
+  position: absolute;
+}
 
-  .pic2 {
-    background-image: url('./images/pic2.jpeg');
-  }
+#forward {
+  background-image: url('./images/chevron-right.png');
+  right: 0;
+}
 
-  .pic3 {
-    background-image: url('./images/pic3.jpeg');
-  }
+#backward {
+  background-image: url('./images/chevron-left.png');
+  left: 0;
+}
 
-  .pic4 {
-    background-image: url('./images/pic4.jpeg');
-  }
+.pauseStartBtn {
+  background-image: url('./images/pauseStart.png');
+  margin: 10px;
+}
 
-  .pic5 {
-    background-image: url('./images/pic5.jpeg');
-  }
+.slide {
+  height: 100%;
+  width: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.pic1 {
+  background-image: url($pic1Src);
+}
+
+.pic2 {
+  background-image: url($pic2Src);
+}
+
+.pic3 {
+  background-image: url($pic3Src);
+}
+
+.pic4 {
+  background-image: url($pic4Src);
+}
+
+.pic5 {
+  background-image: url($pic5Src);
+}
