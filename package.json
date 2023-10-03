@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "repository": {
+    "url": "git+https://github.com/peter-bachowski/photoSlider.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack-dev-server --mode development",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +20,7 @@
   "devDependencies": {
     "css-loader": "^6.8.1",
     "csv-loader": "^3.0.5",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.3",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
