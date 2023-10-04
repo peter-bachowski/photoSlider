@@ -16,18 +16,28 @@ function loadPhotos () {
     //listeners
 
 
-    // window.addEventListener('resize', () => {
-    //     if (slideContainer.clientWidth <= 1600) {
-    //         slideContainer.removeChild(previousSlide);
-    //         slideContainer.removeChild(nextSlide);
-    //     }
-    //     else if (slideContainer.clientWidth > 1600) {
-    //         slideContainer.removeChild(mainSlide);
-    //         slideContainer.appendChild(previousSlide);
-    //         slideContainer.appendChild(mainSlide);
-    //         slideContainer.appendChild(nextSlide);
-    //     }
-    // });
+    window.addEventListener('resize', () => {
+        if (slideContainer.clientWidth <= 1200) {
+            slideContainer.removeChild(previousSlide);
+            slideContainer.removeChild(nextSlide);
+            mainSlide.style.width = '600px';
+        }
+        else if (slideContainer.clientWidth > 1200) {
+            slideContainer.removeChild(mainSlide);
+            slideContainer.appendChild(previousSlide);
+            slideContainer.appendChild(mainSlide);
+            slideContainer.appendChild(nextSlide);
+            mainSlide.style.width = '34%';
+        }
+    });
+
+    window.onload = () => {
+        if (slideContainer.clientWidth <= 1200) {
+            slideContainer.removeChild(previousSlide);
+            slideContainer.removeChild(nextSlide);
+            mainSlide.style.width = '600px';
+        }
+    };
 
     // window.setInterval(function () {
     //     if (!isPaused) {
