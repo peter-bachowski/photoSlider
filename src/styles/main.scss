@@ -60,10 +60,7 @@ body, html, .header, .mainBody, .footer {
 .slideContainer {
   height: 80%;
   width: 100%;
-  //background-color: rgb(191, 191, 191);
-  position: relative;
   flex-direction: row;
-  flex-shrink: 0;
   background-size: 100% 100%;
   background-image: linear-gradient(rgb(255,255,255,0.3), rgb(255,255,255,0.3)), url('./images/tropical.jpg');
 }
@@ -94,8 +91,9 @@ body, html, .header, .mainBody, .footer {
 // }
 
 .previousSlide, .mainSlide, .nextSlide {
-  height: 30%;
+  height: 50%;
   width: 100%;
+  min-width: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-color: white;
@@ -111,7 +109,7 @@ body, html, .header, .mainBody, .footer {
 }
 
 .mainSlide {
-  height: 35%;
+  height: 55%;
   filter: none;
 }
 

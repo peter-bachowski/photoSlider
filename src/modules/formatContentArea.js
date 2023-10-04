@@ -30,6 +30,8 @@ function formatContentArea () {
     //slideContainer.appendChild(pauseStartBtn)
     slideContainer.appendChild(rightArrow);
 
+
+
 }
 
 export default formatContentArea;
