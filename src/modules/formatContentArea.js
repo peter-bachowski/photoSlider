@@ -1,7 +1,5 @@
 function formatContentArea () {
     const mainBody = document.querySelector('.mainBody');
-    const header = document.querySelector('.header');
-    const footer = document.querySelector('.footer');
     const slideContainer = document.createElement('div');
     const rightArrow = document.createElement('div');
     const leftArrow = document.createElement('div');
@@ -22,13 +20,13 @@ function formatContentArea () {
 
     pauseStartBtn.classList.add('pauseStartBtn');
 
+    mainBody.appendChild(leftArrow);
     mainBody.appendChild(slideContainer);
-    slideContainer.appendChild(leftArrow);
     slideContainer.appendChild(previousSlide);
     slideContainer.appendChild(mainSlide);
     slideContainer.appendChild(nextSlide);
     //slideContainer.appendChild(pauseStartBtn)
-    slideContainer.appendChild(rightArrow);
+    mainBody.appendChild(rightArrow);
 
 
 

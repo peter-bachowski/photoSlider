@@ -22,7 +22,9 @@ function loadPhotos () {
     //         slideContainer.removeChild(nextSlide);
     //     }
     //     else if (slideContainer.clientWidth > 1600) {
+    //         slideContainer.removeChild(mainSlide);
     //         slideContainer.appendChild(previousSlide);
+    //         slideContainer.appendChild(mainSlide);
     //         slideContainer.appendChild(nextSlide);
     //     }
     // });

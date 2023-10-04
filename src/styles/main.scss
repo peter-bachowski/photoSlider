@@ -57,19 +57,22 @@ body, html, .header, .mainBody, .footer {
   justify-content: center;
 }
 
-.slideContainer {
-  height: 80%;
-  width: 100%;
-  flex-direction: row;
+.mainBody {
   background-size: 100% 100%;
   background-image: linear-gradient(rgb(255,255,255,0.3), rgb(255,255,255,0.3)), url('./images/tropical.jpg');
 }
 
+.slideContainer {
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+}
+
 .arrow {
-  height: 60px;
-  width: 100px;
+  min-height: 70px;
+  min-width: 40px;
   background-position: center;
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   margin: 5px 10px;
   cursor: pointer;
@@ -91,8 +94,8 @@ body, html, .header, .mainBody, .footer {
 // }
 
 .previousSlide, .mainSlide, .nextSlide {
-  height: 50%;
-  width: 100%;
+  height: 40%;
+  width: 33%;
   min-width: 500px;
   background-position: center;
   background-repeat: no-repeat;
@@ -109,7 +112,8 @@ body, html, .header, .mainBody, .footer {
 }
 
 .mainSlide {
-  height: 55%;
+  height: 45%;
+  width: 34%;
   filter: none;
 }
 
