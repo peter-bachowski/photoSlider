@@ -65,7 +65,7 @@ body, html, .header, .mainBody, .footer {
   flex-direction: row;
   flex-shrink: 0;
   background-size: 100% 100%;
-  background-image: linear-gradient(rgb(255,255,255,0.5), rgb(255,255,255,0.5)), url('./images/tropical.jpg');
+  background-image: linear-gradient(rgb(255,255,255,0.3), rgb(255,255,255,0.3)), url('./images/tropical.jpg');
 }
 
 .arrow {
@@ -100,7 +100,7 @@ body, html, .header, .mainBody, .footer {
   background-repeat: no-repeat;
   background-color: white;
   background-size: 100% 100%;
-  border: 5px solid white;
+  border: 3px solid white;
   -webkit-filter: grayscale(1);
   filter: gray;
   filter: grayscale(1);
