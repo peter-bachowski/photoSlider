@@ -1,13 +1,13 @@
 $primary-font: 'Roboto';
 
-$primary-color: rgb(45, 50, 104);
-$secondary-color: rgb(87, 93, 157);
+$primary-color: rgb(35, 38, 65);
+$secondary-color: rgb(39, 45, 110);
 
-$pic1Src: './images/pic1.jpeg';
-$pic2Src: './images/pic2.jpeg';
-$pic3Src: './images/pic3.jpeg';
-$pic4Src: './images/pic4.jpeg';
-$pic5Src: './images/pic5.jpeg';
+$pic1Src: './images/pic1.jpg';
+$pic2Src: './images/pic2.jpg';
+$pic3Src: './images/pic3.jpg';
+$pic4Src: './images/pic4.jpg';
+$pic5Src: './images/pic5.jpg';
 
 body, html {
   margin: 0;
@@ -32,14 +32,23 @@ body, html, .header, .mainBody, .footer {
   height: 100%;
 }
 
+.header, .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 .header {
-  height: 100px;
-  background-color: $secondary-color;
+  height: 200px;
+  background-color: $primary-color;
+  font-size: 40px;
 }
 
 .footer {
   height: 200px;
   background-color: $primary-color;
+
 }
 
 .mainBody, .slideContainer {
@@ -51,45 +60,63 @@ body, html, .header, .mainBody, .footer {
 .slideContainer {
   height: 80%;
   width: 100%;
-  background-color: rgb(244, 244, 244);
+  //background-color: rgb(191, 191, 191);
   position: relative;
-  flex-direction: column;
-}
-
-.arrow, .pauseStartBtn {
-  height: 50px;
-  width: 50px;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  cursor: pointer;
+  flex-direction: row;
+  flex-shrink: 0;
+  background-size: 100% 100%;
+  background-image: linear-gradient(rgb(255,255,255,0.5), rgb(255,255,255,0.5)), url('./images/tropical.jpg');
 }
 
 .arrow {
-  position: absolute;
+  height: 60px;
+  width: 100px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px 10px;
+  cursor: pointer;
 }
 
 #forward {
   background-image: url('./images/chevron-right.png');
-  right: 0;
 }
 
 #backward {
   background-image: url('./images/chevron-left.png');
-  left: 0;
 }
 
-.pauseStartBtn {
-  background-image: url('./images/pauseStart.png');
-  margin: 10px;
-}
+// .pauseStartBtn { //for if you want a pause start button for automatic transitions
+//   background-image: url('./images/pauseStart.png');
+//   margin: 10px;
+//   position: absolute;
+//   bottom: 0;
+// }
 
-.slide {
-  height: 100%;
-  width: 90%;
+.previousSlide, .mainSlide, .nextSlide {
+  height: 30%;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-color: white;
+  background-size: 100% 100%;
+  border: 5px solid white;
+  -webkit-filter: grayscale(1);
+  filter: gray;
+  filter: grayscale(1);
+}
+
+.previousSlide {
+  border-right: none;
+}
+
+.mainSlide {
+  height: 35%;
+  filter: none;
+}
+
+.nextSlide {
+  border-left: none;
 }
 
 .pic1 {
