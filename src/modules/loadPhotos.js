@@ -1,4 +1,5 @@
 function loadPhotos () {
+    const mainBody = document.querySelector('.mainBody');
     const slideContainer = document.querySelector('.slideContainer');
 
     const previousSlide = document.querySelector('.previousSlide');
@@ -15,38 +16,14 @@ function loadPhotos () {
 
     //listeners
 
-
-    window.addEventListener('resize', () => {
-        if (slideContainer.clientWidth <= 1200) {
-            slideContainer.removeChild(previousSlide);
-            slideContainer.removeChild(nextSlide);
-            mainSlide.style.width = '600px';
-        }
-        else if (slideContainer.clientWidth > 1200) {
-            slideContainer.removeChild(mainSlide);
-            slideContainer.appendChild(previousSlide);
-            slideContainer.appendChild(mainSlide);
-            slideContainer.appendChild(nextSlide);
-            mainSlide.style.width = '34%';
-        }
-    });
-
-    window.onload = () => {
-        if (slideContainer.clientWidth <= 1200) {
-            slideContainer.removeChild(previousSlide);
-            slideContainer.removeChild(nextSlide);
-            mainSlide.style.width = '600px';
-        }
-    };
-
     // window.setInterval(function () {
     //     if (!isPaused) {
     //         nextPicture();
     //     }
     // }, 5000);
 
-    document.querySelector('#forward').addEventListener('click', nextPicture);
-    document.querySelector('#backward').addEventListener('click', previousPicture);
+    document.querySelector('.nextSlide').addEventListener('click', nextPicture);
+    document.querySelector('.previousSlide').addEventListener('click', previousPicture);
     // document.querySelector('.pauseStartBtn').addEventListener('click', () => {
     //     if (isPaused) {
     //         isPaused = false;
@@ -90,13 +67,32 @@ function loadPhotos () {
 
     function previousPicture () {
         if (position === 1) {
+            previousSlide.classList.remove('pic' + numOfPics);
+            previousSlide.classList.add('pic' + (numOfPics - 1));
+
             mainSlide.classList.remove('pic' + position);
             mainSlide.classList.add('pic' + numOfPics);
+
+            nextSlide.classList.remove('pic' + (position + 1));
+            nextSlide.classList.add('pic' + position);
+
             position = numOfPics;
         }
         else {
+            previousSlide.classList.remove('pic' + (position - 1));
+            if (position - 2 === 0) {
+                previousSlide.classList.add('pic' + numOfPics);
+            }
+            else {
+                previousSlide.classList.add('pic' + (position - 2));
+            }
+
             mainSlide.classList.remove('pic' + position);
             mainSlide.classList.add('pic' + (position - 1))
+
+            nextSlide.classList.remove('pic' + (position + 1));
+            nextSlide.classList.add('pic' + (position));
+
             position -= 1;    
         }
     }

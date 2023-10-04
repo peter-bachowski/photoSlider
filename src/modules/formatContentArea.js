@@ -20,16 +20,61 @@ function formatContentArea () {
 
     pauseStartBtn.classList.add('pauseStartBtn');
 
-    mainBody.appendChild(leftArrow);
     mainBody.appendChild(slideContainer);
     slideContainer.appendChild(previousSlide);
     slideContainer.appendChild(mainSlide);
     slideContainer.appendChild(nextSlide);
     //slideContainer.appendChild(pauseStartBtn)
-    mainBody.appendChild(rightArrow);
 
+    window.addEventListener('resize', () => {
+        if (slideContainer.clientWidth <= 1200) {
+            try {
+                slideContainer.removeChild(previousSlide);
+                slideContainer.removeChild(mainSlide);
+                slideContainer.removeChild(nextSlide);
+                mainBody.appendChild(leftArrow);
+                mainBody.appendChild(slideContainer);
+                mainBody.appendChild(rightArrow);
+                slideContainer.appendChild(mainSlide);
+                mainSlide.style.width = '600px';
+            }
+            catch {
+                return;
+            }
+        }
+        else if (slideContainer.clientWidth > 1200) {
+            try {
+                mainBody.removeChild(document.querySelector('#backward'));
+                mainBody.removeChild(document.querySelector('#forward'));
+                slideContainer.removeChild(mainSlide);
+                slideContainer.appendChild(previousSlide);
+                slideContainer.appendChild(mainSlide);
+                slideContainer.appendChild(nextSlide);
+                //mainBody.appendChild(slideContainer);
+                mainSlide.style.width = '34%';
+            }
+            catch {
+                return;
+            }
+        }
+    });
 
-
+    // window.onload = () => {
+    //     if (slideContainer.clientWidth <= 1200) {
+    //         try {
+    //             slideContainer.removeChild(previousSlide);
+    //             slideContainer.removeChild(mainSlide);
+    //             slideContainer.removeChild(nextSlide);
+    //             slideContainer.appendChild(leftArrow);
+    //             slideContainer.appendChild(mainSlide);
+    //             slideContainer.appendChild(rightArrow);
+    //             mainSlide.style.width = '600px';
+    //         }
+    //         catch {
+    //             return;
+    //         }
+    //     }
+    // };
 }
 
 export default formatContentArea;

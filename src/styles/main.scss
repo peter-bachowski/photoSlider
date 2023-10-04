@@ -3,6 +3,8 @@ $primary-font: 'Roboto';
 $primary-color: rgb(35, 38, 65);
 $secondary-color: rgb(39, 45, 110);
 
+$main-body-height: 100%;
+
 $pic1Src: './images/pic1.jpg';
 $pic2Src: './images/pic2.jpg';
 $pic3Src: './images/pic3.jpg';
@@ -64,7 +66,7 @@ body, html, .header, .mainBody, .footer {
 }
 
 .slideContainer {
-  height: 100%;
+  //height: 100%;
   width: 100%;
   flex-direction: row;
 }
@@ -95,7 +97,7 @@ body, html, .header, .mainBody, .footer {
 // }
 
 .previousSlide, .mainSlide, .nextSlide {
-  height: 40%;
+  height: 400px;
   width: 33%;
   background-position: center;
   background-repeat: no-repeat;
@@ -107,12 +109,16 @@ body, html, .header, .mainBody, .footer {
   filter: grayscale(1);
 }
 
+.previousSlide, .nextSlide {
+  cursor: pointer;
+}
+
 .previousSlide {
   border-right: none;
 }
 
 .mainSlide {
-  height: 45%;
+  height: 450px;
   width: 34%;
   filter: none;
 }
